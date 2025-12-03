@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" 
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports 
+              http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" 
+              name="paraderos" pageWidth="595" pageHeight="842" columnWidth="555" 
+              leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+    <parameter name="TITULO" class="java.lang.String"/>
+    <parameter name="NOMBRE_RUTA" class="java.lang.String"/>
+    <field name="idParadero" class="java.lang.Integer"/>
+    <field name="orden" class="java.lang.Integer"/>
+    <field name="nombreParadero" class="java.lang.String"/>
+    <title>
+        <band height="50" splitType="Stretch">
+            <staticText>
+                <reportElement x="0" y="0" width="555" height="30"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="18" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Reporte de Paraderos]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="0" y="30" width="555" height="20"/>
+                <textElement textAlignment="Center"/>
+                <textFieldExpression><![CDATA["Ruta: " + $P{NOMBRE_RUTA}]]></textFieldExpression>
+            </textField>
+        </band>
+    </title>
+    <columnHeader>
+        <band height="30" splitType="Stretch">
+            <staticText>
+                <reportElement x="0" y="0" width="50" height="30"/>
+                <box>
+                    <pen lineWidth="0.5"/>
+                    <topPen lineWidth="0.5"/>
+                    <leftPen lineWidth="0.5"/>
+                    <bottomPen lineWidth="0.5"/>
+                    <rightPen lineWidth="0.5"/>
+                </box>
+                <textElement verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[ID]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="50" y="0" width="80" height="30"/>
+                <box>
+                    <pen lineWidth="0.5"/>
+                    <topPen lineWidth="0.5"/>
+                    <leftPen lineWidth="0.5"/>
+                    <bottomPen lineWidth="0.5"/>
+                    <rightPen lineWidth="0.5"/>
+                </box>
+                <textElement verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Orden]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="130" y="0" width="425" height="30"/>
+                <box>
+                    <pen lineWidth="0.5"/>
+                    <topPen lineWidth="0.5"/>
+                    <leftPen lineWidth="0.5"/>
+                    <bottomPen lineWidth="0.5"/>
+                    <rightPen lineWidth="0.5"/>
+                </box>
+                <textElement verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Nombre Paradero]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="25" splitType="Stretch">
+            <textField>
+                <reportElement x="0" y="0" width="50" height="25"/>
+                <box>
+                    <pen lineWidth="0.5"/>
+                    <topPen lineWidth="0.5"/>
+                    <leftPen lineWidth="0.5"/>
+                    <bottomPen lineWidth="0.5"/>
+                    <rightPen lineWidth="0.5"/>
+                </box>
+                <textElement verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$F{idParadero}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="50" y="0" width="80" height="25"/>
+                <box>
+                    <pen lineWidth="0.5"/>
+                    <topPen lineWidth="0.5"/>
+                    <leftPen lineWidth="0.5"/>
+                    <bottomPen lineWidth="0.5"/>
+                    <rightPen lineWidth="0.5"/>
+                </box>
+                <textElement verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$F{orden}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="130" y="0" width="425" height="25"/>
+                <box>
+                    <pen lineWidth="0.5"/>
+                    <topPen lineWidth="0.5"/>
+                    <leftPen lineWidth="0.5"/>
+                    <bottomPen lineWidth="0.5"/>
+                    <rightPen lineWidth="0.5"/>
+                </box>
+                <textElement verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$F{nombreParadero}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+</jasperReport>
+
